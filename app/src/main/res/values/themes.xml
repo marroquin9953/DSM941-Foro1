@@ -1,0 +1,4 @@
+<resources>
+    <!-- Minimal Material3 theme without old Material attributes -->
+    <style name="Theme.ComposeGradesApp" parent="Theme.Material3.DayNight"/>
+</resources>

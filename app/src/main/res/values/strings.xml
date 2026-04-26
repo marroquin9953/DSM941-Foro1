@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ComposeGradesApp</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="continue_label">Continuar</string>
+    <string name="enter_grades">Ingresar notas</string>
+    <string name="calculate">Calcular promedio</string>
+    <string name="result">Resultado</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="enter_again">Ingresar otras notas</string>
+</resources>
