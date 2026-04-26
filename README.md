@@ -26,6 +26,29 @@ He diseñado esta aplicación siguiendo los principios de la arquitectura recome
 
 ## Flujo de la Aplicación
 
+A continuación, presento un diagrama que ilustra el flujo de pantallas y la toma de decisiones dentro de la aplicación:
+
+```mermaid
+graph TD
+    A[Inicio: Pantalla de Login] --> B{Validar Credenciales}
+    B -- Inválidas --> A
+    B -- Válidas --> C[Extraer nombre de usuario]
+    C --> D[Pantalla de Bienvenida]
+    D --> |Continuar| E[Pantalla de Calificaciones]
+    E --> F{Validar Notas 0-10}
+    F -- Inválidas --> E
+    F -- Válidas --> G[Calcular Promedio]
+    G --> H[Pantalla de Resultados]
+    H --> I{¿Aprobado?}
+    I -- Promedio >= 6.0 --> J[Mostrar: Aprobado]
+    I -- Promedio < 6.0 --> K[Mostrar: Reprobado]
+    J --> L[Opciones Adicionales]
+    K --> L[Opciones Adicionales]
+    L --> |Ingresar otras notas| E
+    L --> |Cerrar Sesión| M[Limpiar historial]
+    M --> A
+```
+
 La aplicación cuenta con un flujo de navegación estructurado en cuatro pantallas principales:
 
 1. **Pantalla de Inicio de Sesión (Login):** Permite ingresar un correo electrónico y una contraseña. He implementado validación de credenciales a través de un ViewModel. Al iniciar sesión correctamente, extraigo el nombre de usuario del correo y lo paso como argumento a la siguiente pantalla.
